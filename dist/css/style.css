@@ -1,0 +1,122 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.5em;
+}
+
+address {
+  font-style: normal;
+  margin: 1rem 0;
+}
+
+.title {
+  font-weight: bold;
+  text-align: center;
+  font-family: "Fira Code", monospace;
+  border: 2px solid #272727;
+  padding: 1rem;
+  margin: 0.5rem 0;
+}
+
+.title .color {
+  color: gray;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.page {
+  background-color: white;
+  margin: 0 auto;
+  width: 21cm;
+  height: 29.7cm;
+  padding: 5cm 2.5cm 1.69cm 2.5cm;
+  position: relative;
+}
+
+.sender {
+  position: absolute;
+  top: 2.5cm;
+  right: 2.5cm;
+  width: 7cm;
+  height: 7.5cm;
+}
+
+.recipient {
+  position: absolute;
+  top: 5.5cm;
+  left: 2.5cm;
+  width: 9cm;
+  height: 4.5cm;
+}
+
+.recipient .sender-address {
+  font-size: 0.8rem;
+}
+
+.date {
+  text-align: end;
+}
+
+.content {
+  position: absolute;
+  top: 11cm;
+  left: 2.5cm;
+  width: 21cm;
+}
+
+.content table {
+  margin: 2rem 0;
+  border-collapse: collapse;
+}
+
+.content table .text-right {
+  text-align: end;
+}
+
+.items {
+  width: 100%;
+}
+
+.items thead td {
+  border-bottom: 1px solid black;
+  font-weight: bold;
+}
+
+.items tfoot td {
+  border-top: 1px solid black;
+}
+
+.items tbody td {
+  padding: 0.5rem 0;
+}
+
+.footer {
+  font-family: "Fira Code", monospace;
+  position: absolute;
+  bottom: 2.5cm;
+  width: 21cm;
+  height: 2.5cm;
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+@media screen {
+  body {
+    background-color: #f1f1f1;
+    padding: 2rem;
+  }
+  .page {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+}
+
+@media print {
+  body {
+    background-color: white;
+  }
+  .footer {
+    page-break-after: always;
+  }
+}

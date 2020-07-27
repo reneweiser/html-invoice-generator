@@ -1,0 +1,4 @@
+node_modules
+content/*
+!content/sample-data.js
+dist/index.html

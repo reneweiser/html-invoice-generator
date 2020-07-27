@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Invoice</title>
+</head>
+
+<body>
+  <div class="page">
+    <div class="sender">
+      <h2 class="title">rene.<span class="color">weiser()</span></h2>
+      <p>{{sender.businessDescription}}</p>
+      <address>
+        <span>{{sender.street}}</span><br />
+        <span>{{sender.postcode}} {{sender.city}}</span>
+      </address>
+      <div class="contact">
+        <span>Telefon: {{contact.mobile}}</span><br />
+        <span>Email: {{contact.email}}</span><br />
+        <span>Steuernummer: {{contact.taxNumber}}</span>
+      </div>
+    </div>
+    <div class="recipient">
+      <span class="sender-address">{{sender.firstName}} {{sender.lastName}} | {{sender.street}} | {{sender.postcode}}
+        {{sender.city}}</span><br />
+      <address>
+        <span>{{recipient.title}}</span><br />
+        <span>{{recipient.firstName}} {{recipient.lastName}}</span><br />
+        <span>{{recipient.street}}</span><br />
+        <span>{{recipient.postcode}} {{recipient.city}}</span>
+      </address>
+    </div>
+    <main class="content">
+      <p class="date">{{sender.city}}, den {{printDate }}</p>
+      <h3>Rechnung Nr.: {{invoice.id}}</h3>
+      <p class="text-bold">{{greeting recipient}},</p>
+      <p>{{invoice.introduction}}</p>
+      <table class="items">
+        <thead>
+          <tr>
+            <td>Datum</td>
+            <td>Bezeichnung</td>
+            <td>Menge</td>
+            <td>Einzelpreis</td>
+            <td>Gesamt</td>
+          </tr>
+        </thead>
+        <tbody id="table-content">
+          {{#each items}}
+          <tr>
+            <td>{{this.date}}</td>
+            <td>{{this.description}}</td>
+            <td>{{this.amount}}</td>
+            <td class="text-right">{{printCurrency this.perUnit}}</td>
+            <td class="text-right">{{printItemTotal this.amount this.perUnit}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3"></td>
+            <td class="text-right text-bold">Rechnungsbetrag</td>
+            <td id="total" class="text-right">{{printInvoiceTotal items}}</td>
+          </tr>
+        </tfoot>
+      </table>
+      <p>{{invoice.closing}}</p>
+      <p>Mit freundlichen Grüßen,<br />{{sender.firstName}} {{sender.lastName}}</p>
+    </main>
+    <footer class="footer">
+      <table style="width: 100%;">
+        <tr>
+          <td>Bankverbindung</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>{{bankInfo.accountOwner}}</td>
+          <td>KTO {{bankInfo.accountNumber}}</td>
+          <td>{{bankInfo.iban}}</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>BLZ {{bankInfo.blz}}</td>
+          <td>BIC {{bankInfo.bic}}</td>
+        </tr>
+      </table>
+    </footer>
+  </div>
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>

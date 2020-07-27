@@ -1,0 +1,20 @@
+{
+  "name": "invoice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "watch": {
+    "build": "{src}/*.js"
+  },
+  "scripts": {
+    "build": "node ./src/js/build.js",
+    "watch": "npm-watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "handlebars": "^4.7.6",
+    "npm-watch": "^0.6.0"
+  }
+}
