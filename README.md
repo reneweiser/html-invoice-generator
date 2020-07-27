@@ -1,3 +1,5 @@
+![Screenshot](https://raw.githubusercontent.com/reneweiser/html-invoice-generator/master/screenshot.png)
+
 # html-invoice-generator
 
 I originally created this project for personal use. But if I'm using Github to work on it, why not make it publically available. Maybe someone else will find it useful.
