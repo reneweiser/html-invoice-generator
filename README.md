@@ -2,7 +2,7 @@
 
 I originally created this project for personal use. But if I'm using Github to work on it, why not make it publically available. Maybe someone else will find it useful.
 
-This project provides the markup for invoices. You can hydrate it with your own data using:
+This project provides the markup for printable invoices which you can hydrate it with your own data using:
 
 ```bash
 npm run build
